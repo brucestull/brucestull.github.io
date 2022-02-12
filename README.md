@@ -2,6 +2,9 @@
 # underConstruction
 Personal Portfolio
 
+# My Personal Portfolio
+[https://brucestull.github.io/](https://brucestull.github.io/) 
+
 # External Resources:
 ## GitHub
 [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
@@ -21,5 +24,4 @@ Personal Portfolio
 [My IOT Feather feed rendered at adafruit.io](https://io.adafruit.com/FlynntKnapp/dashboards/temperature-humidity-history)  
 [My code on Adafruit Feather](https://github.com/brucestull/Arduino/blob/main/SendTempToIO_ESP8266_v02/SendTempToIO_ESP8266_v02.ino)
 
-# My Personal Portfolio
-[https://brucestull.github.io/](https://brucestull.github.io/)  
+ 
