@@ -1,6 +1,8 @@
 # brucestull.github.io
 # underConstruction
-Personal Portfolio
+
+# My Personal Portfolio
+[https://brucestull.github.io/](https://brucestull.github.io/) 
 
 # External Resources:
 ## GitHub
@@ -24,5 +26,4 @@ Personal Portfolio
 ## Earlier work:
 [Python clock on Raspberry Pi Zero](https://github.com/brucestull/RaspberryPiClock)
 
-# My Personal Portfolio
-[https://brucestull.github.io/](https://brucestull.github.io/)  
+ 
