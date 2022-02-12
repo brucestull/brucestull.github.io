@@ -15,9 +15,9 @@
 [Personal Portfolio Ideas](https://github.com/PdxCodeGuild/class_otter/blob/main/2%20Flask%20+%20HTML%20+%20CSS/labs/06%20Personal%20Portfolio.md)
 
 # Projects
-## HTML CSS Python Flask
-[Basic html and css](https://github.com/brucestull/brucestull.github.io/tree/main/projects/basic_webpage_layouts)  
+## Python Flask
 [Working example Python Flask projects](https://github.com/brucestull/brucestull.github.io/tree/main/projects/flask_examples)
+
 
 ## Arduino
 [My IOT Feather feed rendered at adafruit.io](https://io.adafruit.com/FlynntKnapp/dashboards/temperature-humidity-history)  
