@@ -19,7 +19,10 @@ Personal Portfolio
 
 ## Arduino
 [My IOT Feather feed rendered at adafruit.io](https://io.adafruit.com/FlynntKnapp/dashboards/temperature-humidity-history)  
-[My code on Adafruit Feather](https://github.com/brucestull/Arduino/blob/main/SendTempToIO_ESP8266_v02/SendTempToIO_ESP8266_v02.ino)
+[My code on Adafruit Feather](https://github.com/brucestull/Arduino/blob/main/SendTempToIO_ESP8266_v02/SendTempToIO_ESP8266_v02.ino)  
+  
+## Earlier work:
+[Python clock on Raspberry Pi Zero](https://github.com/brucestull/RaspberryPiClock)
 
 # My Personal Portfolio
 [https://brucestull.github.io/](https://brucestull.github.io/)  
