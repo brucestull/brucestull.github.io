@@ -1,6 +1,5 @@
 # brucestull.github.io
 # underConstruction
-Personal Portfolio
 
 # My Personal Portfolio
 [https://brucestull.github.io/](https://brucestull.github.io/) 
