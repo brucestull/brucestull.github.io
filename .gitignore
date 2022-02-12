@@ -1,6 +1,6 @@
 secrets.*
 .vscode
-brucestull.github.io.code-workspace
+brucestull.github.io.code-
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -116,3 +116,5 @@ token.txt
 uploaded_files/
 node_modules
 /code/jeremy_b/to_do/
+*.workspace
+*.code-workspace
