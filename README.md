@@ -7,7 +7,8 @@
 
 
 # My Personal Portfolio
-[https://brucestull.github.io/](https://brucestull.github.io/) 
+[https://brucestull.github.io/](https://brucestull.github.io/)  
+[https://flynntknapp.com/](https://flynntknapp.com/)
 
 # External Resources:
 ## GitHub
