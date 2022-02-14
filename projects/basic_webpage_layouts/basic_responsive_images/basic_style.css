@@ -106,6 +106,10 @@ body {
     border-top: 25px solid hsla(222, 33%, 41%, 1);
 }
 
+.about-us {
+    font-size: 1.25em;
+}
+
 .an-item-of-stuff h3 {
     font-size: 1.3em;
 }
