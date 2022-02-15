@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- For media queries. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <!-- CSS -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="css\box_sizing.css">
     <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\color_theme.css">
     <!-- Fonts -->
 
     <!--  -->
@@ -17,36 +19,36 @@
     <title>Bruce Stull - Creative Content</title>
 </head>
 <body>
-    <header>
-
-    </header>
     <main>
         <section class="name-and-profile-image">
             <!-- Name -->
+            <img src="img\ClaySculptureProfile.jpg" alt="Clay sculpture of a human head. View is side profile." class="profile-image">
             <h1 class="my-name">
                 Bruce Stull
             </h1>
-            <img src="img\ClaySculptureProfile.jpg" alt="Clay sculpture of a human head. View is side profile." class="profile-image">
             <!-- Possible graphic: https://commons.wikimedia.org/wiki/File:Rating_Badge_MM.jpg -->
-            <!-- Link to image: https://upload.wikimedia.org/wikipedia/commons/9/93/Rating_Badge_MM.jpg -->
-            <img src="img/Rating_Badge_MM.jpg" alt="Image of a US Navy Machinist's Mate Screw insignia" class="mm-screw">
-            <a href="https://commons.wikimedia.org/wiki/File:Rating_Badge_MM.jpg" id="mm-screw-attribution">United States Navy.Supersquid at en.wikipedia.Later version(s) were uploaded by SGT141 at en.wikipedia, Public domain, via Wikimedia Commons</a>
+            <div class="mm-screw-block">
+                <!-- Link to image: https://upload.wikimedia.org/wikipedia/commons/9/93/Rating_Badge_MM.jpg -->
+                <img src="img/Rating_Badge_MM.jpg" alt="Image of a US Navy Machinist's Mate Rating badge. The image is a ship's propeller, also known as a screw." class="mm-screw">
+                <a href="https://commons.wikimedia.org/wiki/File:Rating_Badge_MM.jpg" id="mm-screw-attribution">United States Navy.Supersquid at en.wikipedia. Later version(s) were uploaded by SGT141 at en.wikipedia, Public domain, via Wikimedia Commons</a>
+            </div>
         </section>
         <section class="personal-bio">
             <!-- Personal Biography -->
             <ul>
-                <li>Passionate about accessibility of technology</li>
+                <li><h3>A little about me</h3></li>
+                <li>Passionate about technology accessibility</li>
                 <li>Learning about WCAG and ARIA</li>
+                <li>Web app developer</li>
                 <li>US Navy Veteran</li>
-                <li>Software developer</li>
-                <li>Student in Mechanical Engineering and Art Sculpture at The University of Akron</li>
-                <li>Environmental sensor feeds to Adafruit IO API</li>
+                <li>Graduated with degree in Mechanical Engineering and Art Sculpture at The University of Akron</li>
             </ul>
         </section>
         <section class="skills">
             <!-- Technical Skills -->
             <!-- Maybe use word cloud here? https://www.google.com/search?q=word+cloud+generator -->
             <ul>
+                <li><h3>Technical Skills</h3></li>
                 <li>Python</li>
                 <li>Flask</li>
                 <li>Django</li>
@@ -55,31 +57,34 @@
                 <li>HTTP APIs</li>
                 <li>VS Code</li>
                 <li>Arduino</li>
+                <li>Soon to learn JavaScript</li>
             </ul>
         </section>
         <section class="work-history">
             <!-- Work History -->
             <ul>
-                <li>Instructor for tech-learning group, Helped veterans overcome their fear of technology to enrich their lives: Columbus VA</li>
-                <li>Java Software Developer: JPM Chase</li>
-                <li>Research Lab Technician: Goodyear Tire and Rubber Company</li>
-                <li>Machinist Mate: US Navy</li>
-                <li>Tutor of Algebra and Calculus: The University of Akron</li>
-                <li>Thermodynamic Research: Thermodynamic modeling of high altitude airship</li>
+                <li><h3>Work history and other experiences</h3></li>
+                <li>Columbus VA: Instructor for tech-learning group, Helped veterans overcome their fear of technology to enrich their lives</li>
+                <li>JPM Chase: Java Software Developer</li>
+                <li>Goodyear Tire and Rubber Company: Research Lab Technician</li>
+                <li>US Navy: Machinist Mate</li>
+                <li>The University of Akron: Tutor of Algebra and Calculus</li>
+                <li>Thermodynamic Research: Modeling of high altitude airship, using FORTRAN and Thermal Desktop</li>
             </ul>
         </section>
+        <section>
+            <nav>
+                <h5>Some links</h5>
+                <a href="https://github.com/brucestull">My GitHub</a><br>
+                <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_responsive_blog/index.html">Blog - Responsive design using media queries</a><br>
+                <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_responsive_form/index.html">Form - Form input with responsive design using FlexBox</a><br>
+                <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_responsive_images/index.html">Images - Card layout with responsive design using FlexBox</a><br>
+                <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_webpage_image/index.html">Image - First webpage design in training</a><br>
+            </nav>
+            <p>
+                BruceStull 2022
+            </p>
+        </section>
     </main>
-    <footer>
-        <nav>
-            <a href="https://github.com/brucestull">My GitHub</a><br>
-            <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_responsive_blog/index.html">Blog - Responsive design using media queries</a><br>
-            <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_responsive_form/index.html">Form - Form input with responsive design using FlexBox</a><br>
-            <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_responsive_images/index.html">Images - Card layout with responsive design using FlexBox</a><br>
-            <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_webpage_image/index.html">Image - First webpage design in training</a><br>
-        </nav>
-        <p>
-            BruceStull 2022
-        </p>
-    </footer>
 </body>
 </html>

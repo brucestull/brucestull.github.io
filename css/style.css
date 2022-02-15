@@ -1,24 +1,51 @@
 
-
-html {
-    box-sizing: border-box;
+body {
+    background-color: #cccccc;
+    background-image: url("../img/BubbleChamber.jpg");
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+main {
+    background-color: var(--cool-neutral-transparent);
 }
-
+/* Temporary borders to see where things are. */
 section, footer, nav {
     border: 2px solid red;
 }
 
+/* Remove margins and add a little padding around elements. */
 main > * {
     margin: 0;
     padding: 12px;
 }
 
-.mm-screw {
-    box-shadow: 18px 18px 12px #888888;
+/* Set name and image section to flex so image and name can flex wrap. */
+section.name-and-profile-image {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+}
+
+/* Provide settings so profile image stays proper aspect ration. */
+img.profile-image {
+    display: block;
+    height: 100%;
+    width: auto;
+}
+
+/* Set mm-screw-block to display the attribution below the image. */
+div.mm-screw-block {
+    display: flex;
+    /* Temporarily hide mm screw. */
+    display: none;
+    flex-direction: column;
+}
+
+img.mm-screw {
+    /* box-shadow: 18px 18px 12px #888888; */
+    /* box-shadow: 0 0 0 10px #32557f, 0 0 0 15px #f69ec4, 0 2px 5px 15px rgba(0,0,0,.6); */
+    /* Blended blue border */
+    box-shadow: 0 0 3px 10px #32557f;
+    margin-bottom: 10px;
 }
 
 #mm-screw-attribution {

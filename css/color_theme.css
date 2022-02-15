@@ -1,0 +1,35 @@
+/* Color Theme Swatches in Hex */
+.color_theme_claybust-1-hex { color: #260108; }
+.color_theme_claybust-2-hex { color: #8C877D; }
+.color_theme_claybust-3-hex { color: #D9A87E; }
+.color_theme_claybust-4-hex { color: #A67356; }
+.color_theme_claybust-5-hex { color: #733B36; }
+
+/* Color Theme Swatches in RGBA */
+.color_theme_claybust-1-rgba { color: rgba(38, 1, 8, 1); }
+.color_theme_claybust-2-rgba { color: rgba(140, 135, 125, 1); }
+.color_theme_claybust-3-rgba { color: rgba(217, 168, 126, 1); }
+.color_theme_claybust-4-rgba { color: rgba(166, 115, 86, 1); }
+.color_theme_claybust-5-rgba { color: rgba(115, 59, 54, 1); }
+
+/* Color Theme Swatches in HSLA */
+.color_theme_claybust-1-hsla { color: hsla(348, 94, 7, 1); }
+.color_theme_claybust-2-hsla { color: hsla(39, 6, 51, 1); }
+.color_theme_claybust-3-hsla { color: hsla(27, 54, 67, 1); }
+.color_theme_claybust-4-hsla { color: hsla(21, 31, 49, 1); }
+.color_theme_claybust-5-hsla { color: hsla(4, 36, 33, 1); }
+
+/* Modified colors */
+.color_theme_claybust-2-rgba { color: rgba(140, 135, 125, 0.645); }
+.color_theme_claybust-3-rgba { color: rgba(217, 169, 126, 0.768); }
+
+:root {
+    --dark-brown: rgba(38, 1, 8, 1);
+    --medium-brown: rgba(115, 59, 54, 1);
+    --light-brown: rgba(166, 115, 86, 1);
+    --tan: rgba(217, 168, 126, 1);
+    /* Modified */
+    --tan-transparent: rgba(217, 169, 126, 0.768);
+    --cool-neutral: rgba(140, 135, 125, 1);
+    --cool-neutral-transparent: rgba(177, 173, 164, 0.809);
+}
