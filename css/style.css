@@ -2,18 +2,23 @@
 body {
     background-color: #cccccc;
     background-image: url("../img/BubbleChamber.jpg");
+
+    border-top: 12px solid var(--dark-brown);
+
+    font-family: 'Courier Prime', monospace;
 }
 
 main {
     background-color: var(--cool-neutral-transparent);
 }
 /* Temporary borders to see where things are. */
-section, footer, nav {
-    border: 2px solid red;
+section, footer {
+    /* border: 2px solid red; */
+    border: 2px solid var(--cool-neutral);
 }
 
 /* Remove margins and add a little padding around elements. */
-main > * {
+main > section {
     margin: 0;
     padding: 12px;
 }
@@ -22,7 +27,14 @@ main > * {
 section.name-and-profile-image {
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: row; */
+    text-align: center;
+    
+    background-color: var(--light-brown);
+    border-bottom: 12px solid var(--dark-brown);
+}
+
+section.name-and-profile-image > * {
+    text-align: center;
 }
 
 /* Provide settings so profile image stays proper aspect ration. */
@@ -30,6 +42,15 @@ img.profile-image {
     display: block;
     height: 100%;
     width: auto;
+
+    border-radius: 6px;
+    
+    box-shadow: 0 0 3px 10px var(--cool-neutral);
+}
+
+h1.my-name {
+    width: 400px;
+    padding: 24px;
 }
 
 /* Set mm-screw-block to display the attribution below the image. */
@@ -69,4 +90,17 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+footer > p {
+    text-align: right;
+    border-top: 12px solid var(--dark-brown);
+    background-color: var(--light-brown);
+    margin: 0;
+    padding: 12px 12px 12px;
 }
