@@ -31,5 +31,6 @@
     /* Modified */
     --tan-transparent: rgba(217, 169, 126, 0.768);
     --cool-neutral: rgba(140, 135, 125, 1);
-    --cool-neutral-transparent: rgba(177, 173, 164, 0.809);
+    /* --cool-neutral-transparent: rgba(177, 173, 164, 0.809); */
+    --cool-neutral-transparent: rgba(177, 173, 164, 0.89);
 }
