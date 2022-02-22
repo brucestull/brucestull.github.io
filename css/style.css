@@ -25,6 +25,7 @@ main > section {
 
 /* Set name and image section to flex so image and name can flex wrap. */
 section.name-and-profile-image {
+    padding: 18px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
