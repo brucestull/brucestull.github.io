@@ -1,0 +1,2 @@
+# Open index.html locally in browser
+    file:///C:/Users/Bruce/Programming/brucestull.github.io/index.html
