@@ -1,95 +1,231 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- For media queries. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="css\box_sizing.css">
-    <link rel="stylesheet" href="css\style.css">
-    <link rel="stylesheet" href="css\color_theme.css">
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <!--  -->
-    <!-- favicon -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bruce Stull — Software Developer</title>
 
-    <!--  -->
-    <title>Bruce Stull - Django Developer</title>
+  <!-- SEO & Social -->
+  <meta name="description" content="Bruce Stull — Software developer focused on Python, Django, automation, and accessible, reliable systems." />
+  <link rel="canonical" href="https://brucestull.com/">
+  <meta property="og:title" content="Bruce Stull — Software Developer">
+  <meta property="og:description" content="Python • Django • Automation • SRE-minded">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brucestull.com/">
+  <meta property="og:image" content="https://brucestull.com/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon (add files later) -->
+  <link rel="icon" href="/favicon.ico">
+
+  <style>
+    /* ===== Base / Design Tokens ===== */
+    :root {
+      --bg: #0b0c0f;
+      --panel: #12141a;
+      --text: #e6eaf2;
+      --muted: #9aa3b2;
+      --brand: #7dd3fc;
+      --brand-ink: #0c4a6e;
+      --ring: #38bdf8;
+      --card: #0f1116;
+      --border: #1f2430;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      color-scheme: dark;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc; --panel: #ffffff; --text: #0b1220; --muted: #475569; --brand: #0ea5e9; --brand-ink: #082f49; --ring: #0284c7; --card: #ffffff; --border: #e5e7eb; color-scheme: light;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 100% -10%, rgba(125,211,252,.15), transparent 40%),
+                  radial-gradient(900px 600px at -10% -10%, rgba(56,189,248,.12), transparent 35%),
+                  var(--bg);
+      color: var(--text);
+    }
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: saturate(120%) blur(8px); background: color-mix(in oklab, var(--bg) 88%, transparent); border-bottom: 1px solid var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { font-weight: 700; letter-spacing: .2px; display: inline-flex; gap: .5rem; align-items: center; }
+    .brand .dot { width: 10px; height: 10px; border-radius: 999px; background: var(--brand); box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand) 25%, transparent); }
+    nav a { color: var(--text); text-decoration: none; opacity: .9; padding: 8px 12px; border-radius: 10px; }
+    nav a:hover, nav a:focus { outline: none; background: var(--panel); }
+    .hero { padding: 60px 0 24px; }
+    .tag { display: inline-block; font-size: 14px; color: var(--brand-ink); background: color-mix(in oklab, var(--brand) 82%, transparent); padding: 6px 10px; border-radius: 999px; }
+    h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; margin: 14px 0 10px; letter-spacing: .2px; }
+    .lede { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); max-width: 70ch; }
+    .cta { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: .6rem; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(to bottom, color-mix(in oklab, var(--card) 88%, transparent), var(--card)); color: var(--text); text-decoration: none; box-shadow: var(--shadow); }
+    .btn.primary { background: linear-gradient(to bottom right, var(--brand), color-mix(in oklab, var(--brand) 60%, var(--panel))); color: #03253a; border-color: color-mix(in oklab, var(--brand) 40%, var(--border)); }
+    .btn:hover { transform: translateY(-1px); }
+    section { padding: 42px 0; }
+    .section-title { font-size: 18px; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; margin-bottom: 18px; }
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: clip; display: flex; flex-direction: column; }
+    .thumb { aspect-ratio: 16/9; background: linear-gradient(120deg, color-mix(in oklab, var(--brand) 20%, var(--card)), var(--card)); }
+    .card-body { padding: 14px; display: grid; gap: 8px; }
+    .card h3 { font-size: 18px; margin: 0; }
+    .pillrow { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { font-size: 12px; color: var(--muted); border: 1px dashed var(--border); padding: 4px 8px; border-radius: 999px; }
+    .prose { color: var(--muted); max-width: 80ch; }
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .skill { background: var(--panel); border: 1px solid var(--border); padding: 6px 10px; border-radius: 999px; }
+    footer { padding: 28px 0 60px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 30px; }
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .links a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--muted); }
+    .links a:hover { color: var(--text); border-bottom-color: var(--text); }
+    @media (prefers-reduced-motion: reduce) { .btn:hover { transform: none; } }
+  </style>
+
+  <!-- JSON-LD (schema.org Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bruce Stull",
+    "url": "https://brucestull.com/",
+    "jobTitle": "Software Developer",
+    "sameAs": [
+      "https://github.com/brucestull",
+      "https://www.linkedin.com/in/bruce-stull/"
+    ],
+    "knowsAbout": ["Python","Django","Automation","DevOps","SRE"]
+  }
+  </script>
 </head>
 <body>
-    <main>
-        <section class="name-and-profile-image">
-            <!-- Name -->
-            <img src="img\ClaySculptureProfile.jpg" alt="Clay sculpture of a human head. View is side profile." class="profile-image">
-            <h1 class="my-name">
-                Bruce Stull
-            </h1>
-            <!-- Possible graphic: https://commons.wikimedia.org/wiki/File:Rating_Badge_MM.jpg -->
-            <div class="mm-screw-block">
-                <!-- Link to image: https://upload.wikimedia.org/wikipedia/commons/9/93/Rating_Badge_MM.jpg -->
-                <img src="img/Rating_Badge_MM.jpg" alt="Image of a US Navy Machinist's Mate Rating badge. The image is a ship's propeller, also known as a screw." class="mm-screw">
-                <a href="https://commons.wikimedia.org/wiki/File:Rating_Badge_MM.jpg" id="mm-screw-attribution">United States Navy.Supersquid at en.wikipedia. Later version(s) were uploaded by SGT141 at en.wikipedia, Public domain, via Wikimedia Commons</a>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span> Bruce Stull</a>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="tag">Python • Django • Automation</span>
+      <h1 id="hero-title">I build reliable, accessible software and automation that helps people.</h1>
+      <p class="lede">
+        US Navy veteran & Python/Django dev with a knack for clean systems, docs, and teaching.
+        I care about clarity, reliability, and making tech kinder to humans.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#work" aria-label="See my featured work">See my work</a>
+        <a class="btn" href="mailto:bruce.stull@gmail.com" aria-label="Email Bruce">Email me</a>
+        <a class="btn" href="https://github.com/brucestull" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/bruce-stull/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" aria-labelledby="work-title">
+      <h2 class="section-title" id="work-title">Featured work</h2>
+      <div class="grid">
+        <!-- Project card 1 -->
+        <article class="card">
+          <div class="thumb" role="img" aria-label="Screenshot placeholder"></div>
+          <div class="card-body">
+            <h3>Responsive Blog Layout</h3>
+            <p class="prose">Basic blog layout demonstrating responsive design with media queries.</p>
+            <div class="pillrow">
+              <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">Responsive</span>
             </div>
-        </section>
-        <section class="personal-bio">
-            <!-- Personal Biography -->
-            <h2>A little about me</h2>
-            <ul>
-                <li>Django Developer</li>
-                <li>US Navy Veteran</li>
-                <li>Passionate about technology accessibility</li>
-                <li>Learning about WCAG and ARIA</li>
-                <li>Graduated with degree in Mechanical Engineering and Art Sculpture at The University of Akron</li>
-            </ul>
-        </section>
-        <section class="skills">
-            <!-- Technical Skills -->
-            <!-- Maybe use word cloud here? https://www.google.com/search?q=word+cloud+generator -->
-            <h2>Technical Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>Flask</li>
-                <li>Django</li>
-                <li>Django REST</li>
-                <li>Vue</li>
-                <li>JavaScript</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>HTTP APIs</li>
-                <li>VS Code</li>
-                <li>Arduino</li>
-            </ul>
-        </section>
-        <section class="work-history">
-            <!-- Work History -->
-            <h2>Work history and other experiences</h2>
-            <ul>
-                <li>PDX Code Guild: Teaching Assistant</li>
-                <li>JPMorgan Chase: Java Software Developer</li>
-                <li>Columbus VA: Instructor for tech-learning group, Helped veterans overcome their fear of technology to enrich their lives</li>
-                <li>Goodyear Tire and Rubber Company: Research Lab Technician</li>
-                <li>Thermodynamic Research: Thermal modeling of high altitude airship, using FORTRAN and Thermal Desktop</li>
-                <li>The University of Akron: Tutor of Algebra and Calculus</li>
-                <li>US Navy: Machinist Mate</li>
-            </ul>
-        </section>
-        <footer>
-            <nav>
-                <h2>Some links for work when I was a student at PDX Code Guild</h2>
-                <a href="https://github.com/brucestull">My GitHub</a><br>
-                <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_responsive_blog/index.html" target="_blank">Blog - Responsive design using media queries</a><br>
-                <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_responsive_form/index.html" target="_blank">Form - Form input with responsive design using FlexBox</a><br>
-                <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_responsive_images/index.html" target="_blank">Images - Card layout with responsive design using FlexBox</a><br>
-                <a href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_webpage_image/index.html" target="_blank">Image - First webpage design in training</a><br>
-            </nav>
-            <p>
-                © BruceStull 2022
-            </p>
-        </footer>
-    </main>
+            <p><a class="links" href="https://brucestull.com/projects/basic_webpage_layouts/basic_responsive_blog/index.html" target="_blank" rel="noreferrer">Open demo</a></p>
+          </div>
+        </article>
+
+        <!-- Project card 2 -->
+        <article class="card">
+          <div class="thumb" role="img" aria-label="Screenshot placeholder"></div>
+          <div class="card-body">
+            <h3>Responsive Form (Flexbox)</h3>
+            <p class="prose">Form layout that adapts across screen sizes using Flexbox.</p>
+            <div class="pillrow">
+              <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">Flexbox</span>
+            </div>
+            <p><a class="links" href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_responsive_form/index.html" target="_blank" rel="noreferrer">Open demo</a></p>
+          </div>
+        </article>
+
+        <!-- Project card 3 -->
+        <article class="card">
+          <div class="thumb" role="img" aria-label="Screenshot placeholder"></div>
+          <div class="card-body">
+            <h3>Responsive Image Grid (Flexbox)</h3>
+            <p class="prose">Image gallery with a card layout and responsive behavior.</p>
+            <div class="pillrow">
+              <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">Flexbox</span>
+            </div>
+            <p><a class="links" href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_responsive_images/index.html" target="_blank" rel="noreferrer">Open demo</a></p>
+          </div>
+        </article>
+
+        <!-- Project card 4 -->
+        <article class="card">
+          <div class="thumb" role="img" aria-label="Screenshot placeholder"></div>
+          <div class="card-body">
+            <h3>First Webpage Design</h3>
+            <p class="prose">Early training page experimenting with structure and imagery.</p>
+            <div class="pillrow">
+              <span class="pill">HTML</span><span class="pill">CSS</span>
+            </div>
+            <p><a class="links" href="https://brucestull.github.io/projects/basic_webpage_layouts/basic_webpage_image/index.html" target="_blank" rel="noreferrer">Open demo</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 class="section-title" id="about-title">About</h2>
+      <p class="prose">
+        I’m Bruce Stull, a developer who loves Python, Django, and making complex things straightforward.
+        I document thoroughly, design for accessibility, and care about reliability (SRE-ish mindset).
+        I also mentor and enjoy turning ideas into small, testable steps.
+      </p>
+      <div class="skills" aria-label="Skills">
+        <span class="skill">Python</span>
+        <span class="skill">Django & DRF</span>
+        <span class="skill">Testing / PyTest</span>
+        <span class="skill">Git & GitHub Actions</span>
+        <span class="skill">Docker</span>
+        <span class="skill">Linux</span>
+        <span class="skill">Raspberry Pi / Jetson</span>
+        <span class="skill">Accessibility</span>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <p class="prose">Email <a href="mailto:bruce.stull@gmail.com">bruce.stull@gmail.com</a> or message me on <a href="https://www.linkedin.com/in/bruce-stull/" target="_blank" rel="noreferrer">LinkedIn</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="links">
+        <a href="https://github.com/brucestull" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/bruce-stull/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <!-- <a href="/resume.pdf" target="_blank" rel="noreferrer">Résumé (PDF)</a> -->
+      </div>
+      <p style="margin-top:10px;">© <span id="y"></span> Bruce Stull. Built with love and HTML.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
